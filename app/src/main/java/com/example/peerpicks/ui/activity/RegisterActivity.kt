@@ -16,13 +16,6 @@ import com.google.firebase.database.FirebaseDatabase
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding:ActivityRegisterBinding
 
-//    Authentication
-    lateinit var auth:FirebaseAuth
-
-//    Database
-    var database:FirebaseDatabase=FirebaseDatabase.getInstance()
-    var ref: DatabaseReference=database.reference.child("users")
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
