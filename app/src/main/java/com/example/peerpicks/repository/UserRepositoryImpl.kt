@@ -47,7 +47,7 @@ class UserRepositoryImpl:UserRepository {
         userModel: UserModel,
         callback: (Boolean, String) -> Unit
     ) {
-        ref.child(userId.toString()).setValue(userModel).addOnCompleteListener {
+        ref.child(userId).setValue(userModel).addOnCompleteListener {
             if (it.isSuccessful) {
                 callback(true,"Registration success")
 

@@ -43,20 +43,6 @@ class RegisterActivity : AppCompatActivity() {
                         firstName, lastName,
                         address, contact, email
                     )
-                    ref.child(userId.toString()).setValue(userModel).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            Toast.makeText(
-                                this@RegisterActivity,
-                                "Register Success",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        } else {
-                            Toast.makeText(
-                                this@RegisterActivity,
-                                it.exception?.message.toString(),
-                                Toast.LENGTH_LONG).show()
-                        }
-                    }
 
                 } else{
                     Toast.makeText(this@RegisterActivity,
