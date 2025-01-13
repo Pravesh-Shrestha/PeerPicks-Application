@@ -52,6 +52,34 @@ class LoginActivity : AppCompatActivity() {
                 RegisterActivity::class.java)
             startActivity(intent)
         }
+        binding.btnForget.setOnClickListener {
+            val email = binding.editEmail.text.toString()
+
+            if (email.isEmpty()) {
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Please enter your email address.",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                userViewModel.forgetPassword(email) { success, message ->
+                    if (success) {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Password reset link has been sent to your email.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+            }
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
