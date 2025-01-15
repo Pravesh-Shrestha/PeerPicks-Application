@@ -20,7 +20,7 @@ interface ProductRepository {
 
 
     fun getProductById(productId: String,
-                       callback: (ProductModel?, String) -> Unit)
+                       callback: (ProductModel?,Boolean, String) -> Unit)
 
 
 
