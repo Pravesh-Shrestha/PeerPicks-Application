@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.peerpicks.R
 import com.example.peerpicks.databinding.ActivityNavigationBinding
 import com.example.peerpicks.ui.fragment.Home1Fragment
-import com.example.peerpicks.ui.fragment.Home2Fragment
 import com.example.peerpicks.ui.fragment.HomeFragment
 import com.example.peerpicks.ui.fragment.MessageFragment
 import com.example.peerpicks.ui.fragment.NotificationFragment

@@ -12,11 +12,7 @@ import com.example.peerpicks.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Home2Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class Home2Fragment : Fragment() {
 
     private var param1: String? = null
