@@ -5,9 +5,9 @@ import kotlinx.coroutines.internal.OpDescriptor
 data class ProductModel(
     var productId: String="",
     var productName: String="",
-    var productDescriptor: String="",
+    var productDesc: String="",
+    var productRating: Int=0,
     var productAddress: String="",
-    var productRating: String="",
     var productCatagoryId: String="",
 
 ) {

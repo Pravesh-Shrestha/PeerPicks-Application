@@ -11,8 +11,12 @@ import com.example.peerpicks.R
 import com.example.peerpicks.databinding.ActivityLoginBinding
 import com.example.peerpicks.repository.UserRepositoryImpl
 import com.example.peerpicks.viewModel.UserViewModel
+import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
+
+    lateinit var firebaseDatabase: FirebaseDatabase
+    lateinit var database: FirebaseDatabase
 
     lateinit var binding:ActivityLoginBinding
     lateinit var userViewModel:UserViewModel

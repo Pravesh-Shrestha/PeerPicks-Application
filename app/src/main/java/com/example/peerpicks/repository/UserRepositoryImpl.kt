@@ -9,7 +9,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class UserRepositoryImpl:UserRepository {
     //    Authentication
-    lateinit var auth: FirebaseAuth
+     var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     //    Database
     var database: FirebaseDatabase = FirebaseDatabase.getInstance()
