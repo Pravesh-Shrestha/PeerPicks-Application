@@ -1,6 +1,7 @@
 package com.example.peerpicks.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.peerpicks.R
 import com.example.peerpicks.model.ProductModel
+import com.example.peerpicks.ui.activity.UpdateProductActivity
 
 class ProductAdapter(
     val context: Context,
@@ -15,6 +17,7 @@ class ProductAdapter(
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
     class ProductViewHolder(itemView: View)
         : RecyclerView.ViewHolder(itemView) {
+        val editBtn: TextView = itemView.findViewById(R.id.lblEdit)
         val pName: TextView = itemView.findViewById(R.id.displayName)
         val pRate: TextView = itemView.findViewById(R.id.displayRating)
         val pDesc: TextView = itemView.findViewById(R.id.displayDesc)
@@ -31,6 +34,12 @@ class ProductAdapter(
         holder.pName.text = data[position].productName
         holder.pRate.text= data[position].productRating.toString()
         holder.pDesc.text = data[position].productDesc
+
+        holder.editBtn.setOnClickListener{
+            val intent = Intent(context,UpdateProductActivity::class.java)
+            intent.putExtra("productId",data[position].productId)
+            context.startActivity(intent)
+        }
     }
     fun updateData(products: List<ProductModel>){
         data.clear()
