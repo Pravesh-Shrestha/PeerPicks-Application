@@ -30,8 +30,8 @@ class ProductViewModel (val repo:ProductRepository) {
     var products=MutableLiveData<ProductModel?>()
         get() = _products
 
-    var _allproducts=MutableLiveData<List<ProductModel?>>()
-    var allProducts=MutableLiveData<List<ProductModel?>>()
+    var _allproducts=MutableLiveData<List<ProductModel>>()
+    var allProducts=MutableLiveData<List<ProductModel>>()
         get() = _allproducts
 
 

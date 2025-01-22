@@ -15,8 +15,8 @@ import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var firebaseDatabase: FirebaseDatabase
-    lateinit var database: FirebaseDatabase
+//    lateinit var firebaseDatabase: FirebaseDatabase
+//    lateinit var database: FirebaseDatabase
 
     lateinit var binding:ActivityLoginBinding
     lateinit var userViewModel:UserViewModel
