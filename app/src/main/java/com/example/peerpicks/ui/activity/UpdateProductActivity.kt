@@ -35,16 +35,33 @@ class UpdateProductActivity : AppCompatActivity() {
         productViewModel.products.observe(this){
             binding.updateproductName.setText(it?.productName.toString())
             binding.updateproductDesc.setText(it?.productDesc.toString())
-            binding.updateproductRatings.setText(it?.productRating.toString())
+            binding.updateproductRatings.setText(it?.productRating.toString().toInt())
 
         }
 
         binding.updatebutton.setOnClickListener{
             val newProductName=binding.updateproductName.toString()
             val newProductDesc=binding.updateproductDesc.toString()
-            val newProductRating=binding.updateproductName.toString()
+            val newProductRating=binding.updateproductRatings.toString()
+
+            var updatedMap= mutableMapOf<String,Any>()
+
+            updatedMap["productName"]=newProductName
+            updatedMap["productDesc"]=newProductDesc
+            updatedMap["productRating"]=newProductRating
 
 
+            productViewModel.updateProduct(id,updatedMap){
+                success, message ->
+                if(success){
+                    Toast.makeText(this@UpdateProductActivity,
+                        message, Toast.LENGTH_LONG).show()
+                    finish()
+                }else{
+                    Toast.makeText(this@UpdateProductActivity,
+                        message, Toast.LENGTH_LONG).show()
+                }
+            }
 
 //            productViewModel.updateProduct(model){
 //                    success,message->
