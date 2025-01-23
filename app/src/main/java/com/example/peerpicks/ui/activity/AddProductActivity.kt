@@ -37,6 +37,7 @@ class AddProductActivity : AppCompatActivity() {
                 if(success){
                     Toast.makeText(this@AddProductActivity,
                         message,Toast.LENGTH_LONG).show()
+                    finish()
                 }else{
                     Toast.makeText(this@AddProductActivity,
                         message,Toast.LENGTH_LONG).show()

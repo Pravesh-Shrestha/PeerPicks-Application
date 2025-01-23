@@ -35,14 +35,14 @@ class UpdateProductActivity : AppCompatActivity() {
         productViewModel.products.observe(this){
             binding.updateproductName.setText(it?.productName.toString())
             binding.updateproductDesc.setText(it?.productDesc.toString())
-            binding.updateproductRatings.setText(it?.productRating.toString().toInt())
+            binding.updateproductRatings.setText(it?.productRating.toString())
 
         }
 
         binding.updatebutton.setOnClickListener{
-            val newProductName=binding.updateproductName.toString()
-            val newProductDesc=binding.updateproductDesc.toString()
-            val newProductRating=binding.updateproductRatings.toString()
+            val newProductName=binding.updateproductName.text.toString()
+            val newProductDesc=binding.updateproductDesc.text.toString()
+            val newProductRating=binding.updateproductRatings.text.toString().toInt()
 
             var updatedMap= mutableMapOf<String,Any>()
 
